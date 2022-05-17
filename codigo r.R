@@ -15,3 +15,6 @@ View(RCTdata)
 library(dplyr)
 
 rctdataclean<-select(RCTdata,journal,pubyear,pubmonth,study.title,pmid,doi,date.submi,acceptdate,regist,regist.number,protocol,title.ident,ab.effect,ab.pvalue,report.guide,cited.guide,health.cond,age.group,sample.size,groups,data.statem,fund.statem,funders,coi.statem,ab.interv,an.outcome,me.tid2,in.hypothesis,in.object,me.design,me.eleg.crit,me.outcomes,me.out.mensur,me.random,me.allocation,me.blinding,me.ssize,me.itt.pps,me.tid1,me.tid3,me.tid4,me.tid5,me.tid6,me.tid7,me.tid8,me.tid9,me.tid11,me.tid12,me.stat.desc,re.part.flow,re.date.recrut,re.table.base,re.part.analise,re.effectsizes,re.adverse.events,re.tid10,re.change.protocol,di.bias,di.spin)
+
+#DATA EXPORT.csv
+write.csv(rctdataclean,"rctdataclean.csv")
