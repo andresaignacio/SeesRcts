@@ -31,7 +31,7 @@ datatransparency <-select(rctdataclean, regist, protocol, data.statem)
 
 ###Completeness###
 
-datacompleteness <-select(rctdataclean,study.title, me.tid2, me.design, me.tid1,re.date.recrut, fund.statem, coi.statem)
+datacompleteness <-select(rctdataclean,title.ident, me.tid2, me.design, me.tid1,re.date.recrut, fund.statem, coi.statem)
 
 ###Participants###
 
@@ -53,3 +53,68 @@ dataoutcome<- select(rctdataclean, an.outcome, ab.effect, me.outcomes, re.table.
 ###Critical appraisal###
 
 datacriticalappraisal<- select(rctdataclean, in.hypothesis, me.stat.desc, di.bias, di.spin)
+
+
+###Analise descritiva###
+####Frequencia absoluta####
+
+library(dplyr)
+
+library(psych)
+
+glimpse(datatransparency)
+glimpse(rctdataclean)
+
+###transparency###
+table(datatransparency$regist)
+table(datatransparency$protocol)
+table(datatransparency$data.statem)
+
+###Completeness###
+
+View(datacompleteness)
+table(datacompleteness$title.ident)
+table(datacompleteness$me.tid2)
+table(datacompleteness$me.design)
+table(datacompleteness$me.tid1)
+table(datacompleteness$re.date.recrut)
+table(datacompleteness$fund.statem)
+table(datacompleteness$coi.statem)
+
+###participants###
+table(dataparticipants$me.eleg.crit)
+table(dataparticipants$me.tid5)
+table(dataparticipants$re.part.flow)
+
+###Intervention###
+
+table(dataintervention$ab.interv)
+table(dataintervention$me.tid3)
+table(dataintervention$me.tid4)
+table(dataintervention$me.tid6)
+table(dataintervention$me.tid7)
+table(dataintervention$me.tid8)
+table(dataintervention$me.tid9)
+table(dataintervention$me.tid11)
+
+###Methodological rigor###
+
+table(datamethodologicalrigor$me.random)
+table(datamethodologicalrigor$me.allocation)
+table(datamethodologicalrigor$me.blinding)
+table(datamethodologicalrigor$me.ssize)
+
+
+###Outcome###
+table(dataoutcome$an.outcome)
+table(dataoutcome$ab.effect)
+table(dataoutcome$me.outcomes)
+table(dataoutcome$re.table.base)
+table(dataoutcome$re.part.analise)
+table(dataoutcome$re.effectsizes)
+
+###Critical appraisal###
+table(datacriticalappraisal$in.hypothesis)
+table(datacriticalappraisal$me.stat.desc)
+table(datacriticalappraisal$di.bias)
+table(datacriticalappraisal$di.spin)
