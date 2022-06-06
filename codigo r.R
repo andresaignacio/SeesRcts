@@ -174,3 +174,7 @@ prop.table(table(datacriticalappraisal$me.stat.desc))
 prop.table(table(datacriticalappraisal$di.bias))
 prop.table(table(datacriticalappraisal$di.spin))
 
+
+###Descritiva journals###
+table(rctdataclean$journal)
+
