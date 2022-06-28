@@ -63,121 +63,18 @@ datacriticalappraisal<- select(rctdataclean,in.hypothesis,me.stat.desc,di.bias,d
 ###Analise descritiva###
 ####Frequencia absoluta####
 
-library(dplyr)
+###Descriptive analysis###
 
-library(psych)
-
-glimpse(datatransparency)
-glimpse(rctdataclean)
-
-###transparency###
-table(datatransparency$regist)
-table(datatransparency$protocol)
-table(datatransparency$data.statem)
-
-###Completeness###
-
-View(datacompleteness)
-table(datacompleteness$title.ident)
-table(datacompleteness$me.tid2)
-table(datacompleteness$me.design)
-table(datacompleteness$me.tid1)
-table(datacompleteness$re.date.recrut)
-table(datacompleteness$fund.statem)
-table(datacompleteness$coi.statem)
-
-###participants###
-table(dataparticipants$me.eleg.crit)
-table(dataparticipants$me.tid5)
-table(dataparticipants$re.part.flow)
-
-###Intervention###
-
-table(dataintervention$ab.interv)
-table(dataintervention$me.tid3)
-table(dataintervention$me.tid4)
-table(dataintervention$me.tid6)
-table(dataintervention$me.tid7)
-table(dataintervention$me.tid8)
-table(dataintervention$me.tid9)
-table(dataintervention$me.tid11)
-
-###Methodological rigor###
-
-table(datamethodologicalrigor$me.random)
-table(datamethodologicalrigor$me.allocation)
-table(datamethodologicalrigor$me.blinding)
-table(datamethodologicalrigor$me.ssize)
+library(DescTools)
+Desc(datatransparency,plotit = F)
+Desc(datacompleteness,plotit = F)
+Desc(datacriticalappraisal,plotit = F)
+Desc(dataintervention,plotit = F)
+Desc(datamethodologicalrigor,plotit = F)
+Desc(dataoutcome,plotit = F)
+Desc(dataparticipants,plotit = F)
 
 
-###Outcome###
-table(dataoutcome$an.outcome)
-table(dataoutcome$ab.effect)
-table(dataoutcome$me.outcomes)
-table(dataoutcome$re.table.base)
-table(dataoutcome$re.part.analise)
-table(dataoutcome$re.effectsizes)
-
-###Critical appraisal###
-table(datacriticalappraisal$in.hypothesis)
-table(datacriticalappraisal$me.stat.desc)
-table(datacriticalappraisal$di.bias)
-table(datacriticalappraisal$di.spin)
-
-###Frequencia relativa###
-
-###Transparence###
-prop.table(table(datatransparency$regist))
-prop.table(table(datatransparency$protocol))
-prop.table(table(datatransparency$data.statem))
-
-###Completeness###
-
-prop.table(table(datacompleteness$title.ident))
-prop.table(table(datacompleteness$me.tid2))
-prop.table(table(datacompleteness$me.design))
-prop.table(table(datacompleteness$me.tid1))
-prop.table(table(datacompleteness$re.date.recrut))
-prop.table(table(datacompleteness$fund.statem))
-prop.table(table(datacompleteness$coi.statem))
-
-###Participants###
-prop.table(table(dataparticipants$me.eleg.crit))
-prop.table(table(dataparticipants$me.tid5))
-prop.table(table(dataparticipants$re.part.flow))
-
-###Intervention###
-
-prop.table(table(dataintervention$ab.interv))
-prop.table(table(dataintervention$me.tid3))
-prop.table(table(dataintervention$me.tid4))
-prop.table(table(dataintervention$me.tid6))
-prop.table(table(dataintervention$me.tid7))
-prop.table(table(dataintervention$me.tid8))
-prop.table(table(dataintervention$me.tid9))
-prop.table(table(dataintervention$me.tid11))
-
-###Methodological rigor###
-
-prop.table(table(datamethodologicalrigor$me.random))
-prop.table(table(datamethodologicalrigor$me.allocation))
-prop.table(table(datamethodologicalrigor$me.blinding))
-prop.table(table(datamethodologicalrigor$me.ssize))
-
-
-###Outcome###
-prop.table(table(dataoutcome$an.outcome))
-prop.table(table(dataoutcome$ab.effect))
-prop.table(table(dataoutcome$me.outcomes))
-prop.table(table(dataoutcome$re.table.base))
-prop.table(table(dataoutcome$re.part.analise))
-prop.table(table(dataoutcome$re.effectsizes))
-
-###Critical appraisal###
-prop.table(table(datacriticalappraisal$in.hypothesis))
-prop.table(table(datacriticalappraisal$me.stat.desc))
-prop.table(table(datacriticalappraisal$di.bias))
-prop.table(table(datacriticalappraisal$di.spin))
 
 
 ###Descritiva journals###
