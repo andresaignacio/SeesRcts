@@ -27,32 +27,37 @@ library(dplyr)
 ###transparency###
 
 
-datatransparency <-select(rctdataclean, regist, protocol, data.statem)
+datatransparency <-select(rctdataclean,regist,protocol,data.statem,re.tid10,re.change.protocol)
+
 
 ###Completeness###
 
-datacompleteness <-select(rctdataclean,title.ident, me.tid2, me.design, me.tid1,re.date.recrut, fund.statem, coi.statem)
+datacompleteness <-select(rctdataclean,in.object,me.design,me.tid1,me.tid12,re.date.recrut)
+
 
 ###Participants###
 
-dataparticipants <-select(rctdataclean, me.eleg.crit, me.tid5, re.part.flow)
+dataparticipants <-select(rctdataclean,me.eleg.crit,me.tid5,re.part.flow)
+
 
 ###Intervention###
 
-dataintervention <-select(rctdataclean, ab.interv, me.tid3, me.tid4, me.tid6, me.tid7, me.tid8, me.tid9, me.tid11, me.tid12, re.tid10, re.adverse.events)
+dataintervention <-select(rctdataclean,ab.interv,me.tid3,me.tid4,me.tid6,me.tid7,me.tid8,me.tid9,me.tid11)
+
 
 ###Methodological rigor###
 
-datamethodologicalrigor <-select(rctdataclean, me.random, me.allocation, me.blinding, me.ssize)
+datamethodologicalrigor <-select(rctdataclean,me.random,me.allocation,me.blinding,me.ssize,me.itt.pps)
 
 
 ###Outcome###
 
-dataoutcome<- select(rctdataclean, an.outcome, ab.effect, me.outcomes, re.table.base, re.part.analise, re.effectsizes)
+dataoutcome<- select(rctdataclean,ab.effect,ab.pvalue,an.outcome,me.outcomes,me.out.mensur,re.part.analise,re.effectsizes,re.adverse.events)
+
 
 ###Critical appraisal###
 
-datacriticalappraisal<- select(rctdataclean, in.hypothesis, me.stat.desc, di.bias, di.spin)
+datacriticalappraisal<- select(rctdataclean,in.hypothesis,me.stat.desc,di.bias,di.spin)
 
 
 ###Analise descritiva###
