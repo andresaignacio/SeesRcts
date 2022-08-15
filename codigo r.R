@@ -80,3 +80,12 @@ Desc(dataparticipants,plotit = F)
 ###Descritiva journals###
 table(rctdataclean$journal)
 
+#### FALTA COLOCAR SELEÇÃO DO BANCO DE ANALISE####
+
+library(DescTools)
+
+geral = transform(geral, contagem = rowSums(geral== c("1")))
+
+with(geral,Desc(contagem))
+
+journal=subset(geral,select = c("journal","contagem"))
