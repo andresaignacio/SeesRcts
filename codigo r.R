@@ -108,5 +108,43 @@ Participants=transform(Participants, sim=me.eleg.crit+
 
 with(Participants,Desc(sim))
 
+intervention=transform(intervention,sim=ab.interv+
+                       me.tid3+
+                       me.tid4+
+                       me.tid5+
+                       me.tid6+
+                       me.tid7+
+                       me.tid8+
+                       me.tid9+
+                       me.tid11)
+
+with(intervention, Desc(sim))
+
+methodologicalrigor=transform(methodologicalrigor,sim=me.random+
+                              me.allocation+
+                              me.blinding+
+                              me.ssize+
+                              me.itt.pps)
+
+with(methodologicalrigor,Desc(sim))
+
+outcome=transform(outcome, sim=ab.effect+
+                  ab.pvalue+
+                  an.outcome+
+                  me.outcomes+
+                  me.out.mensur+
+                  re.part.analise+
+                  re.effectsizes+
+                  re.adverse.events)
+
+with(outcome,Desc(sim))
+
+criticalappraisal=transform(criticalappraisal, sim=in.hypothesis+
+                            me.stat.desc+
+                            di.bias+
+                            di.spin)
+
+with(criticalappraisal,Desc(sim))
+
 
 
