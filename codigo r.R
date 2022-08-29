@@ -89,3 +89,24 @@ geral = transform(geral, contagem = rowSums(geral== c("1")))
 with(geral,Desc(contagem))
 
 journal=subset(geral,select = c("journal","contagem"))
+
+#Frequencia geral por dominio###
+
+library(tidyverse)
+
+Completeness=transform(completness,sim=in.object+
+                      me.design+
+                      me.tid1+
+                      me.tid12+
+                      re.date.recrut)
+with(completeness,Desc(sim))
+
+esc(Participants, plotit = F)
+
+Participants=transform(Participants, sim=me.eleg.crit+
+                       re.part.flow)
+
+with(Participants,Desc(sim))
+
+
+
