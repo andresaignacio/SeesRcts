@@ -147,4 +147,13 @@ criticalappraisal=transform(criticalappraisal, sim=in.hypothesis+
 with(criticalappraisal,Desc(sim))
 
 
+#ANÁLISE DE ESTUDOS COM E SEM REGISTRO#
 
+#Análise estudos registrados#
+library(readxl)
+geral <- read_excel("geral 2020.xlsx","Estudos registrados")
+View(geral)
+
+library(DescTools)
+
+Desc(geral,plotit = F)
