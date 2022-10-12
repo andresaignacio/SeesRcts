@@ -52,7 +52,7 @@ datamethodologicalrigor <-select(rctdataclean,me.random,me.allocation,me.blindin
 
 ###Outcome###
 
-dataoutcome<- select(rctdataclean,ab.effect,ab.pvalue,an.outcome,me.outcomes,me.out.mensur,re.part.analise,re.effectsizes,re.adverse.events)
+dataoutcome<- select(rctdataclean,ab.effect,ab.pvalue,an.outcome,me.outcomes,me.out.mensur,re.part.analise,re.effectsizes,re.adverse.events,re.table.base)
 
 
 ###Critical appraisal###
