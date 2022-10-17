@@ -149,11 +149,124 @@ with(criticalappraisal,Desc(sim))
 
 #ANÁLISE DE ESTUDOS COM E SEM REGISTRO#
 
-#Análise estudos registrados#
 library(readxl)
-geral <- read_excel("geral 2020.xlsx","Estudos registrados")
+geral <- read_excel("geral 2020.xlsx")
 View(geral)
 
-library(DescTools)
+library(tidyverse)
+geral<-geral%>%
+  mutate(
+  transparencia=regist+
+  protocol+
+  data.statem+
+  re.tid10+
+  re.change.protocol
+  )
 
-Desc(geral,plotit = F)
+table(geral$transparencia,geral$regist)
+
+prop.table(table(geral$transparencia,geral$regist),margin = 1)
+
+library(rstatix)
+
+prop_trend_test(table(geral$transparencia,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    completeness=in.object+
+    me.design+
+    me.tid1+
+    me.tid12+
+    re.date.recrut+
+    title.ident+
+    report.guide+
+    fund.statem+
+    coi.statem+
+    me.tid2
+  )
+
+table(geral$completeness,geral$regist)
+
+prop.table(table(geral$completeness,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$completeness,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    outcome=ab.effect+
+    ab.pvalue+
+    an.outcome+
+    me.outcomes+
+    me.out.mensur+
+    re.part.analise+
+    re.effectsizes+
+    re.adverse.events+
+    re.table.base
+  )
+
+table(geral$outcome,geral$regist)
+
+prop.table(table(geral$outcome,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$outcome,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    intervention=ab.interv+
+    me.tid3+
+    me.tid4+
+    me.tid5+
+    me.tid6+
+    me.tid7+
+    me.tid8+
+    me.tid9+
+    me.tid11
+  )
+
+table(geral$intervention,geral$regist)
+
+prop.table(table(geral$intervention,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$intervention,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    participants=me.eleg.crit+
+    re.part.flow
+  )
+
+table(geral$participants,geral$regist)
+
+prop.table(table(geral$participants,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$participants,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    critapp=in.hypothesis+
+    me.stat.desc+
+    di.bias+
+    di.spin
+  )
+
+table(geral$critapp,geral$regist)
+
+prop.table(table(geral$critapp,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$critapp,geral$regist))
+
+geral<-geral%>%
+  mutate(
+    rigormeth=me.random+
+    me.allocation+
+    me.blinding+
+    me.ssize+
+    me.itt.pps
+  )
+
+table(geral$rigormeth,geral$regist)
+
+prop.table(table(geral$rigormeth,geral$regist),margin = 1)
+
+prop_trend_test(table(geral$rigormeth,geral$regist))
+
