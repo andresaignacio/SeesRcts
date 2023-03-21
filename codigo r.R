@@ -270,3 +270,43 @@ prop.table(table(geral$rigormeth,geral$regist),margin = 1)
 
 prop_trend_test(table(geral$rigormeth,geral$regist))
 
+###Qui quadrado de independência por itens recomendado###
+
+library(readxl)
+dados <- read_excel("SeesRcts/geral 2020.xlsx","geral2")
+View(dados)
+
+library(dplyr)
+library(rstatix)
+library(psych)
+library(corrplot)
+
+protocol<-table(dados$regist,dados$protocol)
+protocol
+
+x2protocol<- chisq.test(protocol)
+x2protocol
+
+title.ident<-table(dados$regist,dados$title.ident)
+title.ident
+
+x2title.ident<- chisq.test(title.ident)
+x2title.ident
+
+ab.effect<-table(dados$regist,dados$ab.effect)
+ab.effect
+
+x2ab.effect<- chisq.test(ab.effect)
+x2ab.effect
+
+Ab.pvalue<-table(dados$regist,dados$ab.pvalue)
+Ab.pvalue
+
+x2Ab.pvalue<- chisq.test(Ab.pvalue)
+x2Ab.pvalue
+
+report.guide<-table(dados$regist,dados$report.guide)
+report.guide
+
+x2report.guide<- chisq.test(report.guide)
+x2report.guide
